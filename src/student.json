@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Hồ Thanh Hải",
+      "age": 18,
+      "gender": "male",
+      "phone": "0384631254"
+    },
+    {
+      "name": "Hồ Thanh Hải 2",
+      "age": 18,
+      "gender": "male",
+      "phone": "0384631254",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn-add">add</button>
+    
+    <script>
+        async function getData() {
+            try {
+                let response = await axios.get("http://localhost:8585/students");
+                return response.data;
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        $('#btn-add').click(async function() {
+            try {
+                await axios.post("http://localhost:8585/students", {
+                    "name": "Hồ Thanh Hải 2",
+                    "age": 18,
+                    "gender": "male",
+                    "phone": "0384631254"
+                }); 
+                console.log('Data posted successfully');
+            } catch (error) {
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
